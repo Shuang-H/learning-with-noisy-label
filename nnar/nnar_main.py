@@ -54,7 +54,7 @@ def load_data(input_size, model=None):
 
 	print("Initializing Datasets and Dataloaders...")
 	torch.manual_seed(10)
-	data_dir = "data/" + args.data
+	data_dir = "../data/" + args.data
 
 	if args.data == 'Clothing_1M':
 		image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x]) for x in ['train', 'val', 'test']}
@@ -80,7 +80,7 @@ def load_data(input_size, model=None):
 			cifar_train = inject_nar_noise(cifar_train, args.num_classes, args.error_rate)
 		if args.error_rate > 0 and args.error_type == 'nnar':
 			print('Injecting NNAR Noise...', args.error_rate)
-			model_path = 'model/best_resnet_'+args.data.lower()+'_unweight.pth.tar'
+			model_path = '../model/best_resnet_'+args.data.lower()+'_unweight.pth.tar'
 			cifar_train = inject_nnar_noise(cifar_train, args.num_classes, args.error_rate, model_path)
 
 		val_loader = torch.utils.data.DataLoader(DatasetWithIndex(cifar_val), batch_size=args.batch_size, shuffle=True, num_workers=4)
