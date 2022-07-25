@@ -1,6 +1,8 @@
-# learning-with-noisy-label
+# Learning with Noisy Label
 
-This is the initial code for the paper: A Model-Agnostic Approach for Learning with Noisy Labels of Arbitrary Distributions. After the paper is published, we will further organize the code and make it public.
+This is the code for the paper: A Model-Agnostic Approach for Learning with Noisy Labels of Arbitrary Distributions,
+Shuang Hao, Peng Li, Renzhi Wu, Xu Chu,
+which was presented at [ICDE 2022](https://icde2022.ieeecomputer.my/).
 
 
 ## Setups
